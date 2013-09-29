@@ -2,7 +2,8 @@ class Verse
 
   include Mongoid::Document
 
-  field :_id,   type: Integer
+  field :_id, overwrite: true, type: String
+
   field :title, type: String
   field :text,  type: String
 

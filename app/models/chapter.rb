@@ -2,7 +2,8 @@ class Chapter
 
   include Mongoid::Document
 
-  field :_id, type: String
+  field :_id, overwrite: true, type: String
+
   field :n,   type: Integer
 
   belongs_to :translation

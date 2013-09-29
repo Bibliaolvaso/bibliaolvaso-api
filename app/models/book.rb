@@ -2,7 +2,8 @@ class Book
 
   include Mongoid::Document
 
-  field :_id,            type: String
+  field :_id, overwrite: true, type: String
+
   field :index,          type: Integer
   field :title,          type: String
   field :abbr,           type: String
