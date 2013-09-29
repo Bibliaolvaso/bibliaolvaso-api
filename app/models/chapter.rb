@@ -14,4 +14,8 @@ class Chapter
     "#{book.abbr} #{n}"
   end
 
+  def book_title
+    book.title
+  end
+
 end
