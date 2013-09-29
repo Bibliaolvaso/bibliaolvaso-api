@@ -1,16 +1,8 @@
-development: &defaults
-  # Configure available database sessions. (required)
+development:
   sessions:
-    # Defines the default session. (required)
     default:
-      # Defines the name of the default database that Mongoid can connect to.
-      # (required).
-      database: bibliaolvaso
-      # Provides the hosts the default session can connect to. Must be an array
-      # of host:port pairs. (required)
-      hosts:
-        - localhost:27017
-      options:
+      uri: 'mongodb://localhost:27017/bibliaolvaso'
+      options: &default_session_options
         # Change the default write concern. (default = { w: 1 })
         # write:
         # w: 1
@@ -28,8 +20,7 @@ development: &defaults
         # operation on failure. (default: 1)
         # retry_interval: 1
 
-  # Configure Mongoid specific options. (optional)
-  options:
+  options: &default_mongoid_options
     # Enable the identity map, needed for eager loading. (default: false)
     identity_map_enabled: true
 
@@ -67,9 +58,7 @@ development: &defaults
 test:
   sessions:
     default:
-      database: bibliaolvaso_test
-      hosts:
-        - localhost:27017
+      uri: mongodb://localhost:27017/bibliaolvaso_test
       options:
         read: primary
         # In the test environment we lower the retries and retry interval to
@@ -78,4 +67,10 @@ test:
         retry_interval: 0
 
 production:
-  <<: *defaults
+  sessions:
+    default:
+      uri: <%= ENV['MONGO_URI'] || ENV['MONGOLAB_URI'] || ENV['MONGOHQ_URI'] %>
+      options:
+        <<: *default_session_options
+  options:
+    <<: *default_mongoid_options
