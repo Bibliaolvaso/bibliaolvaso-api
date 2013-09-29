@@ -10,5 +10,6 @@ gem 'mongoid', github: 'mongoid/mongoid'
 gem 'active_model_serializers', '~> 0.8.1'
 
 group :production do
+  gem 'rails_12factor'
   gem 'puma'
 end
