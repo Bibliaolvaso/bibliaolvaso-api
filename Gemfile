@@ -12,6 +12,8 @@ gem 'active_model_serializers', '~> 0.8.1'
 gem 'newrelic_rpm'
 gem 'newrelic_moped'
 
+gem 'skylight'
+
 group :production do
   gem 'rails_12factor'
   gem 'puma'
