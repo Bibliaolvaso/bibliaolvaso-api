@@ -3,4 +3,4 @@
 application: mpXYI0n9TuSc
 
 # The authentication token for the application.
-authentication: <%= ENV['SKYLIGHT_TOKEN'] %>
+authentication: l8-LCBuB0FPNmT4-M1QIhbzgat-5m123pZWWM4v2hAE
