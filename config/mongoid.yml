@@ -72,5 +72,6 @@ production:
       uri: <%= ENV['MONGO_URI'] || ENV['MONGOLAB_URI'] || ENV['MONGOHQ_URI'] %>
       options:
         <<: *default_session_options
+        pool_size: 16
   options:
     <<: *default_mongoid_options
