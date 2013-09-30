@@ -9,6 +9,9 @@ gem 'rack-cors', require: 'rack/cors'
 gem 'mongoid', github: 'mongoid/mongoid'
 gem 'active_model_serializers', '~> 0.8.1'
 
+gem 'newrelic_rpm'
+gem 'newrelic_moped'
+
 group :production do
   gem 'rails_12factor'
   gem 'puma'

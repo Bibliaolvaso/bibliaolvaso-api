@@ -53,6 +53,10 @@ GEM
       bson (~> 2.0.0.rc2)
       optionable (~> 0.1.1)
     multi_json (1.8.0)
+    newrelic_moped (0.0.6)
+      moped
+      newrelic_rpm (~> 3.6.0)
+    newrelic_rpm (3.6.7.159)
     optionable (0.1.1)
     origin (1.1.0)
     polyglot (0.3.3)
@@ -110,6 +114,8 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers (~> 0.8.1)
   mongoid!
+  newrelic_moped
+  newrelic_rpm
   puma
   rack-cors
   rails (~> 4.0.0)
